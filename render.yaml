@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: whitegobinda-telegram-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python whitegobinda_bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_CHAT_ID
+        sync: false
+      - key: DB_PATH
+        value: whitegobinda_bot.db
